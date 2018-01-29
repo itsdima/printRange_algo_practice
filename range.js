@@ -1,12 +1,16 @@
 //This function prints a range given a start, end and skip amount and skips by 1 if skip amount is undefined
 function printRange(startpoint, endpoint, skipamount){
-	var count = []; 
-	for (var i= startpoint; i< endpoint; i+=skipamount){
-		if(skipamount === undefined){
+  	if(skipamount === undefined){
 			skipamount = 1; 
 		}
-		count.push(i);
-	}
+		if(endpoint === undefined){
+		  endpoint = startpoint; 
+		  startpoint = 0; 
+		}
+	var count=[]; 
+	for (var i= startpoint; i< endpoint; i+=skipamount){
+		count.push(i); 
+		}
 	return count; 
 }
 
